@@ -38,7 +38,8 @@
     "./tokens": {
       "types": "./dist/tokens/index.d.ts",
       "import": "./dist/tokens/index.js"
-    }
+    },
+    "./package.json": "./package.json"
   },
   "files": [
     "dist"

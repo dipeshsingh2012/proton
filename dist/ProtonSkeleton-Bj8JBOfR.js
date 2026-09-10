@@ -1,7 +1,7 @@
 import { jsxs as f, jsx as r, Fragment as S } from "react/jsx-runtime";
-import { createTheme as k, ThemeProvider as w, CssBaseline as v, Button as W, CircularProgress as z, Card as P, CardContent as T, TextField as R, InputAdornment as C, Slider as $, Dialog as M, DialogTitle as B, DialogContent as H, DialogActions as I } from "@mui/material";
-import { radii as u, colors as e, typography as b, shadows as x } from "./tokens/index.js";
-const j = {
+import { createTheme as k, ThemeProvider as v, CssBaseline as W, Button as z, CircularProgress as w, Card as P, CardContent as T, TextField as R, InputAdornment as C, Slider as $, Dialog as M, DialogTitle as H, DialogContent as B, DialogActions as j, Skeleton as I } from "@mui/material";
+import { radii as c, colors as e, typography as b, shadows as x } from "./tokens/index.js";
+const D = {
   palette: {
     mode: "light",
     primary: {
@@ -54,13 +54,13 @@ const j = {
     h6: { fontWeight: 600 }
   },
   shape: {
-    borderRadius: parseInt(u.md, 10)
+    borderRadius: parseInt(c.md, 10)
   },
   components: {
     MuiButton: {
       styleOverrides: {
         root: {
-          borderRadius: u.lg,
+          borderRadius: c.lg,
           boxShadow: "none",
           "&:hover": {
             boxShadow: "none"
@@ -71,7 +71,7 @@ const j = {
     MuiCard: {
       styleOverrides: {
         root: {
-          borderRadius: u["2xl"],
+          borderRadius: c["2xl"],
           borderColor: e.slate[200],
           boxShadow: "0 1px 3px 0 rgba(0, 0, 0, 0.05)"
         }
@@ -80,39 +80,39 @@ const j = {
     MuiDialog: {
       styleOverrides: {
         paper: {
-          borderRadius: u["2xl"]
+          borderRadius: c["2xl"]
         }
       }
     }
   }
-}, D = k(j), A = ({
-  children: o,
-  theme: t = D
-}) => /* @__PURE__ */ f(w, { theme: t, children: [
-  /* @__PURE__ */ r(v, {}),
-  o
-] }), L = ({
-  children: o,
-  variant: t = "primary",
+}, F = k(D), A = ({
+  children: t,
+  theme: o = F
+}) => /* @__PURE__ */ f(v, { theme: o, children: [
+  /* @__PURE__ */ r(W, {}),
+  t
+] }), V = ({
+  children: t,
+  variant: o = "primary",
   size: n = "md",
   isLoading: i = !1,
   disabled: a = !1,
   fullWidth: s = !1,
   startIcon: d,
-  endIcon: c,
+  endIcon: p,
   onClick: l,
   type: g = "button",
   className: h = ""
 }) => /* @__PURE__ */ r(
-  W,
+  z,
   {
     type: g,
     onClick: l,
     disabled: a || i,
     fullWidth: s,
     sx: (() => {
-      const p = {
-        borderRadius: u.xl,
+      const u = {
+        borderRadius: c.xl,
         fontWeight: 700,
         textTransform: "none",
         letterSpacing: "-0.01em",
@@ -122,10 +122,10 @@ const j = {
         justifyContent: "center",
         gap: "6px"
       };
-      switch (n === "sm" ? (p.fontSize = "0.75rem", p.py = "6px", p.px = "12px") : n === "lg" ? (p.fontSize = "0.95rem", p.py = "12px", p.px = "24px") : (p.fontSize = "0.85rem", p.py = "9px", p.px = "18px"), t) {
+      switch (n === "sm" ? (u.fontSize = "0.75rem", u.py = "6px", u.px = "12px") : n === "lg" ? (u.fontSize = "0.95rem", u.py = "12px", u.px = "24px") : (u.fontSize = "0.85rem", u.py = "9px", u.px = "18px"), o) {
         case "primary":
           return {
-            ...p,
+            ...u,
             backgroundColor: e.amber[700],
             color: "#ffffff",
             "&:hover": {
@@ -136,7 +136,7 @@ const j = {
           };
         case "secondary":
           return {
-            ...p,
+            ...u,
             backgroundColor: e.coffee[900],
             color: "#ffffff",
             "&:hover": {
@@ -147,7 +147,7 @@ const j = {
           };
         case "outline":
           return {
-            ...p,
+            ...u,
             backgroundColor: "transparent",
             color: e.slate[800],
             border: `1px solid ${e.slate[300]}`,
@@ -158,7 +158,7 @@ const j = {
           };
         case "ghost":
           return {
-            ...p,
+            ...u,
             backgroundColor: "transparent",
             color: e.slate[700],
             "&:hover": {
@@ -167,7 +167,7 @@ const j = {
           };
         case "danger":
           return {
-            ...p,
+            ...u,
             backgroundColor: e.status.error.main,
             color: "#ffffff",
             "&:hover": {
@@ -179,17 +179,17 @@ const j = {
     })(),
     className: h,
     children: i ? /* @__PURE__ */ f(S, { children: [
-      /* @__PURE__ */ r(z, { size: 16, color: "inherit", sx: { mr: 1 } }),
+      /* @__PURE__ */ r(w, { size: 16, color: "inherit", sx: { mr: 1 } }),
       /* @__PURE__ */ r("span", { children: "Loading..." })
     ] }) : /* @__PURE__ */ f(S, { children: [
       d && /* @__PURE__ */ r("span", { style: { display: "inline-flex" }, children: d }),
-      o,
-      c && /* @__PURE__ */ r("span", { style: { display: "inline-flex" }, children: c })
+      t,
+      p && /* @__PURE__ */ r("span", { style: { display: "inline-flex" }, children: p })
     ] })
   }
 ), m = ({
-  children: o,
-  variant: t = "outlined",
+  children: t,
+  variant: o = "outlined",
   padding: n = "md",
   hoverEffect: i = !1,
   onClick: a,
@@ -209,32 +209,32 @@ const j = {
   };
   return /* @__PURE__ */ r(P, { sx: (() => {
     const l = {
-      borderRadius: u["2xl"],
+      borderRadius: c["2xl"],
       transition: "all 0.25s cubic-bezier(0.4, 0, 0.2, 1)",
       cursor: a ? "pointer" : "default"
     };
-    return t === "elevated" ? (l.backgroundColor = "#ffffff", l.boxShadow = x.md, l.border = "none", i && (l["&:hover"] = {
+    return o === "elevated" ? (l.backgroundColor = "#ffffff", l.boxShadow = x.md, l.border = "none", i && (l["&:hover"] = {
       boxShadow: x.xl,
       transform: "translateY(-2px)"
-    })) : t === "flat" ? (l.backgroundColor = e.slate[50], l.boxShadow = "none", l.border = `1px solid ${e.slate[100]}`) : (l.backgroundColor = "#ffffff", l.border = `1px solid ${e.slate[200]}`, l.boxShadow = x.xs, i && (l["&:hover"] = {
+    })) : o === "flat" ? (l.backgroundColor = e.slate[50], l.boxShadow = "none", l.border = `1px solid ${e.slate[100]}`) : (l.backgroundColor = "#ffffff", l.border = `1px solid ${e.slate[200]}`, l.boxShadow = x.xs, i && (l["&:hover"] = {
       borderColor: e.amber[500],
       boxShadow: x.md,
       transform: "translateY(-2px)"
     })), l;
-  })(), onClick: a, className: s, children: /* @__PURE__ */ r(T, { sx: { p: `${d()} !important` }, children: o }) });
+  })(), onClick: a, className: s, children: /* @__PURE__ */ r(T, { sx: { p: `${d()} !important` }, children: t }) });
 };
-m.Header = ({ title: o, subtitle: t, action: n }) => /* @__PURE__ */ f("div", { style: { display: "flex", alignItems: "flex-start", justifyContent: "space-between", marginBottom: "12px" }, children: [
+m.Header = ({ title: t, subtitle: o, action: n }) => /* @__PURE__ */ f("div", { style: { display: "flex", alignItems: "flex-start", justifyContent: "space-between", marginBottom: "12px" }, children: [
   /* @__PURE__ */ f("div", { children: [
-    /* @__PURE__ */ r("div", { style: { fontWeight: 800, fontSize: "1.05rem", color: e.slate[900], letterSpacing: "-0.01em" }, children: o }),
-    t && /* @__PURE__ */ r("div", { style: { fontSize: "0.75rem", color: e.slate[500], marginTop: "2px" }, children: t })
+    /* @__PURE__ */ r("div", { style: { fontWeight: 800, fontSize: "1.05rem", color: e.slate[900], letterSpacing: "-0.01em" }, children: t }),
+    o && /* @__PURE__ */ r("div", { style: { fontSize: "0.75rem", color: e.slate[500], marginTop: "2px" }, children: o })
   ] }),
   n && /* @__PURE__ */ r("div", { children: n })
 ] });
-m.Body = ({ children: o, className: t = "" }) => /* @__PURE__ */ r("div", { className: t, children: o });
-m.Footer = ({ children: o, className: t = "" }) => /* @__PURE__ */ r(
+m.Body = ({ children: t, className: o = "" }) => /* @__PURE__ */ r("div", { className: o, children: t });
+m.Footer = ({ children: t, className: o = "" }) => /* @__PURE__ */ r(
   "div",
   {
-    className: t,
+    className: o,
     style: {
       marginTop: "16px",
       paddingTop: "12px",
@@ -243,19 +243,19 @@ m.Footer = ({ children: o, className: t = "" }) => /* @__PURE__ */ r(
       alignItems: "center",
       justifyContent: "space-between"
     },
-    children: o
+    children: t
   }
 );
-const V = ({
-  label: o,
-  status: t = "neutral",
+const _ = ({
+  label: t,
+  status: o = "neutral",
   pulse: n = !1,
   icon: i,
   size: a = "md",
   className: s = ""
 }) => {
-  const c = (() => {
-    switch (t) {
+  const p = (() => {
+    switch (o) {
       case "success":
         return {
           bg: e.status.success.light,
@@ -309,10 +309,10 @@ const V = ({
         alignItems: "center",
         gap: "6px",
         padding: `${l} ${g}`,
-        borderRadius: u.full,
-        backgroundColor: c.bg,
-        color: c.text,
-        border: `1px solid ${c.border}`,
+        borderRadius: c.full,
+        backgroundColor: p.bg,
+        color: p.text,
+        border: `1px solid ${p.border}`,
         fontSize: h,
         fontWeight: 700,
         letterSpacing: "-0.01em",
@@ -326,25 +326,25 @@ const V = ({
               width: "6px",
               height: "6px",
               borderRadius: "50%",
-              backgroundColor: c.dot,
+              backgroundColor: p.dot,
               display: "inline-block"
             }
           }
         ),
         i && /* @__PURE__ */ r("span", { style: { display: "inline-flex" }, children: i }),
-        /* @__PURE__ */ r("span", { children: o })
+        /* @__PURE__ */ r("span", { children: t })
       ]
     }
   );
-}, _ = ({
-  label: o,
-  value: t,
+}, q = ({
+  label: t,
+  value: o,
   onChange: n,
   placeholder: i,
   type: a = "text",
   error: s = !1,
   helperText: d,
-  disabled: c = !1,
+  disabled: p = !1,
   fullWidth: l = !0,
   startAdornment: g,
   endAdornment: h,
@@ -352,14 +352,14 @@ const V = ({
 }) => /* @__PURE__ */ r(
   R,
   {
-    label: o,
-    value: t,
+    label: t,
+    value: o,
     onChange: n,
     placeholder: i,
     type: a,
     error: s,
     helperText: d,
-    disabled: c,
+    disabled: p,
     fullWidth: l,
     variant: "outlined",
     size: "small",
@@ -368,7 +368,7 @@ const V = ({
       startAdornment: g ? /* @__PURE__ */ r(C, { position: "start", children: g }) : void 0,
       endAdornment: h ? /* @__PURE__ */ r(C, { position: "end", children: h }) : void 0,
       sx: {
-        borderRadius: u.lg,
+        borderRadius: c.lg,
         backgroundColor: "#ffffff",
         fontSize: "0.85rem",
         "& fieldset": {
@@ -393,16 +393,16 @@ const V = ({
       }
     }
   }
-), q = ({
-  value: o,
-  onChange: t,
+), G = ({
+  value: t,
+  onChange: o,
   min: n = 30,
   max: i = 70,
   step: a = 1,
   unit: s = "cm",
   label: d,
-  className: c = ""
-}) => /* @__PURE__ */ f("div", { className: c, style: { width: "100%" }, children: [
+  className: p = ""
+}) => /* @__PURE__ */ f("div", { className: p, style: { width: "100%" }, children: [
   d && /* @__PURE__ */ f("div", { style: { display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "8px" }, children: [
     /* @__PURE__ */ r("span", { style: { fontSize: "0.75rem", fontWeight: 700, color: e.slate[700] }, children: d }),
     /* @__PURE__ */ f(
@@ -415,10 +415,10 @@ const V = ({
           backgroundColor: e.amber[50],
           border: `1px solid ${e.amber[200]}`,
           padding: "2px 8px",
-          borderRadius: u.md
+          borderRadius: c.md
         },
         children: [
-          o,
+          t,
           " ",
           s
         ]
@@ -428,11 +428,11 @@ const V = ({
   /* @__PURE__ */ r(
     $,
     {
-      value: o,
+      value: t,
       min: n,
       max: i,
       step: a,
-      onChange: (l, g) => t(g),
+      onChange: (l, g) => o(g),
       sx: {
         color: e.amber[700],
         height: 6,
@@ -455,41 +455,41 @@ const V = ({
       }
     }
   )
-] }), G = ({
-  isOpen: o,
-  onClose: t,
+] }), J = ({
+  isOpen: t,
+  onClose: o,
   title: n,
   subtitle: i,
   children: a,
   actions: s,
   maxWidth: d = "sm",
-  className: c = ""
+  className: p = ""
 }) => /* @__PURE__ */ f(
   M,
   {
-    open: o,
-    onClose: t,
+    open: t,
+    onClose: o,
     maxWidth: d,
     fullWidth: !0,
-    className: c,
+    className: p,
     PaperProps: {
       sx: {
-        borderRadius: u["2xl"],
+        borderRadius: c["2xl"],
         p: 1
       }
     },
     children: [
-      n && /* @__PURE__ */ f(B, { sx: { pb: 1 }, children: [
+      n && /* @__PURE__ */ f(H, { sx: { pb: 1 }, children: [
         /* @__PURE__ */ r("div", { style: { fontWeight: 800, fontSize: "1.25rem", color: e.slate[900], letterSpacing: "-0.02em" }, children: n }),
         i && /* @__PURE__ */ r("div", { style: { fontSize: "0.8rem", color: e.slate[500], marginTop: "4px", fontWeight: 500 }, children: i })
       ] }),
-      /* @__PURE__ */ r(H, { sx: { py: 2 }, children: a }),
-      s && /* @__PURE__ */ r(I, { sx: { px: 3, pb: 2, pt: 1 }, children: s })
+      /* @__PURE__ */ r(B, { sx: { py: 2 }, children: a }),
+      s && /* @__PURE__ */ r(j, { sx: { px: 3, pb: 2, pt: 1 }, children: s })
     ]
   }
-), J = ({
-  title: o = "Physical Dimensions",
-  badgeText: t = "Metric Specs",
+), K = ({
+  title: t = "Physical Dimensions",
+  badgeText: o = "Metric Specs",
   metrics: n,
   highlightNotice: i,
   className: a = ""
@@ -499,7 +499,7 @@ const V = ({
     className: a,
     style: {
       backgroundColor: "#ffffff",
-      borderRadius: u["2xl"],
+      borderRadius: c["2xl"],
       border: `1px solid ${e.slate[200]}`,
       padding: "20px"
     },
@@ -516,10 +516,10 @@ const V = ({
               letterSpacing: "0.05em",
               color: e.slate[400]
             },
-            children: o
+            children: t
           }
         ),
-        t && /* @__PURE__ */ r(
+        o && /* @__PURE__ */ r(
           "span",
           {
             style: {
@@ -528,10 +528,10 @@ const V = ({
               backgroundColor: e.slate[100],
               color: e.slate[600],
               padding: "2px 8px",
-              borderRadius: u.full,
+              borderRadius: c.full,
               fontFamily: "monospace"
             },
-            children: t
+            children: o
           }
         )
       ] }),
@@ -542,7 +542,7 @@ const V = ({
             display: "grid",
             gridTemplateColumns: `repeat(${n.length}, 1fr)`,
             backgroundColor: e.slate[50],
-            borderRadius: u.xl,
+            borderRadius: c.xl,
             border: `1px solid ${e.slate[100]}`,
             padding: "14px",
             textAlign: "center",
@@ -576,7 +576,7 @@ const V = ({
             padding: "10px 14px",
             backgroundColor: e.amber[50],
             border: `1px solid ${e.amber[200]}`,
-            borderRadius: u.lg,
+            borderRadius: c.lg,
             fontSize: "0.75rem",
             color: e.amber[900],
             fontWeight: 600
@@ -586,9 +586,9 @@ const V = ({
       )
     ]
   }
-), K = ({
-  level: o = 2,
-  children: t,
+), Q = ({
+  level: t = 2,
+  children: o,
   className: n = "",
   style: i = {}
 }) => {
@@ -600,7 +600,7 @@ const V = ({
       margin: 0,
       ...i
     };
-    switch (o) {
+    switch (t) {
       case 1:
         return { ...s, fontSize: "2.5rem", fontWeight: 900, lineHeight: 1.1 };
       case 2:
@@ -613,10 +613,10 @@ const V = ({
         return { ...s, fontSize: "0.875rem", fontWeight: 600 };
     }
   };
-  return o === 1 ? /* @__PURE__ */ r("h1", { className: n, style: a(), children: t }) : o === 2 ? /* @__PURE__ */ r("h2", { className: n, style: a(), children: t }) : o === 3 ? /* @__PURE__ */ r("h3", { className: n, style: a(), children: t }) : o === 4 ? /* @__PURE__ */ r("h4", { className: n, style: a(), children: t }) : o === 5 ? /* @__PURE__ */ r("h5", { className: n, style: a(), children: t }) : /* @__PURE__ */ r("h6", { className: n, style: a(), children: t });
-}, Q = ({
-  children: o,
-  variant: t = "body",
+  return t === 1 ? /* @__PURE__ */ r("h1", { className: n, style: a(), children: o }) : t === 2 ? /* @__PURE__ */ r("h2", { className: n, style: a(), children: o }) : t === 3 ? /* @__PURE__ */ r("h3", { className: n, style: a(), children: o }) : t === 4 ? /* @__PURE__ */ r("h4", { className: n, style: a(), children: o }) : t === 5 ? /* @__PURE__ */ r("h5", { className: n, style: a(), children: o }) : /* @__PURE__ */ r("h6", { className: n, style: a(), children: o });
+}, U = ({
+  children: t,
+  variant: o = "body",
   className: n = "",
   style: i = {}
 }) => /* @__PURE__ */ r("p", { className: n, style: (() => {
@@ -625,7 +625,7 @@ const V = ({
     margin: 0,
     ...i
   };
-  switch (t) {
+  switch (o) {
     case "caption":
       return { ...s, fontSize: "0.75rem", color: e.slate[500], lineHeight: 1.3 };
     case "muted":
@@ -633,18 +633,86 @@ const V = ({
     default:
       return { ...s, fontSize: "0.9rem", color: e.slate[700], lineHeight: 1.5 };
   }
-})(), children: o });
+})(), children: t }), X = ({
+  size: t = "md",
+  variant: o = "coffee",
+  thickness: n = 3.6,
+  label: i = "Loading...",
+  className: a = ""
+}) => {
+  const s = typeof t == "number" ? t : t === "sm" ? 18 : t === "lg" ? 40 : 28, d = o === "amber" ? e.amber[600] : o === "slate" ? e.slate[500] : o === "inherit" ? "inherit" : e.coffee[900];
+  return /* @__PURE__ */ f(
+    "div",
+    {
+      role: "status",
+      "aria-label": i,
+      className: `inline-flex items-center justify-center ${a}`,
+      children: [
+        /* @__PURE__ */ r(
+          w,
+          {
+            size: s,
+            thickness: n,
+            sx: {
+              color: d,
+              animationDuration: "750ms"
+            }
+          }
+        ),
+        /* @__PURE__ */ r(
+          "span",
+          {
+            style: {
+              position: "absolute",
+              width: "1px",
+              height: "1px",
+              padding: 0,
+              margin: "-1px",
+              overflow: "hidden",
+              clip: "rect(0, 0, 0, 0)",
+              whiteSpace: "nowrap",
+              border: 0
+            },
+            children: i
+          }
+        )
+      ]
+    }
+  );
+}, Z = ({
+  variant: t = "rounded",
+  width: o,
+  height: n,
+  animation: i = "wave",
+  className: a = "",
+  borderRadius: s
+}) => /* @__PURE__ */ r(
+  I,
+  {
+    variant: t,
+    width: o,
+    height: n,
+    animation: i,
+    className: a,
+    sx: {
+      borderRadius: s || (t === "circular" ? "50%" : c.xl),
+      bgcolor: "rgba(0, 0, 0, 0.06)"
+    }
+  }
+);
 export {
-  L as P,
+  V as P,
   m as a,
-  G as b,
-  K as c,
-  _ as d,
-  J as e,
-  q as f,
-  V as g,
-  Q as h,
-  A as i,
-  j,
-  D as p
+  J as b,
+  Q as c,
+  q as d,
+  K as e,
+  Z as f,
+  G as g,
+  X as h,
+  _ as i,
+  U as j,
+  A as k,
+  D as l,
+  F as p
 };

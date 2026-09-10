@@ -6,3 +6,5 @@ export * from './ProtonSlider';
 export * from './ProtonDialog';
 export * from './ProtonMetricBox';
 export * from './ProtonTypography';
+export * from './ProtonSpinner';
+export * from './ProtonSkeleton';
