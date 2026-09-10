@@ -1,31 +1,31 @@
-# Proton (`@dipeshsingh2012/proton`)
+# Proton (`@dipesh.singh/proton`)
 
 > **Unified Design System & Framework-Agnostic Abstraction Layer for Hiljhil Cafe**
 
-`@dipeshsingh2012/proton` is the foundational design system powering all micro-frontends (`homepage-ui`, `discovery-ui`, `product-page-ui`, `counter-check`, `cart-ui`, `checkout-ui`, `search-ui`, `mycommerce`).
+`@dipesh.singh/proton` is the foundational design system powering all micro-frontends (`homepage-ui`, `discovery-ui`, `product-page-ui`, `counter-check`, `cart-ui`, `checkout-ui`, `search-ui`, `mycommerce`).
 
-It serves as a clean **abstraction barrier** over underlying UI component libraries (currently Material UI v6). By importing exclusively from `@dipeshsingh2012/proton`, UI fragments remain decoupled from the specific rendering engine — allowing the team to swap or replace Material UI (e.g., with Radix primitives, Tailwind, or custom CSS) at any point in the future without touching fragment code.
+It serves as a clean **abstraction barrier** over underlying UI component libraries (currently Material UI v6). By importing exclusively from `@dipesh.singh/proton`, UI fragments remain decoupled from the specific rendering engine — allowing the team to swap or replace Material UI (e.g., with Radix primitives, Tailwind, or custom CSS) at any point in the future without touching fragment code.
 
 ---
 
 ## 🏗️ Multi-Target Architecture
 
-`@dipeshsingh2012/proton` provides framework-specific exports alongside shared, framework-agnostic design tokens:
+`@dipesh.singh/proton` provides framework-specific exports alongside shared, framework-agnostic design tokens:
 
-- **`@dipeshsingh2012/proton/tokens`**: Pure JavaScript/TypeScript tokens (colors, typography, 4px grid spacing, radii, shadows).
-- **`@dipeshsingh2012/proton/react`** (or `@dipeshsingh2012/proton`): React components wrapping Material UI (`ProtonThemeProvider`, `ProtonButton`, `ProtonCard`, `ProtonStatusBadge`, `ProtonInput`, `ProtonSlider`, `ProtonMetricBox`, `ProtonDialog`, `ProtonTypography`).
-- **`@dipeshsingh2012/proton/vue`**: Vue 3 component adapters consuming the identical token specifications.
+- **`@dipesh.singh/proton/tokens`**: Pure JavaScript/TypeScript tokens (colors, typography, 4px grid spacing, radii, shadows).
+- **`@dipesh.singh/proton/react`** (or `@dipesh.singh/proton`): React components wrapping Material UI (`ProtonThemeProvider`, `ProtonButton`, `ProtonCard`, `ProtonStatusBadge`, `ProtonInput`, `ProtonSlider`, `ProtonMetricBox`, `ProtonDialog`, `ProtonTypography`).
+- **`@dipesh.singh/proton/vue`**: Vue 3 component adapters consuming the identical token specifications.
 
 ```
 ┌────────────────────────────────────────────────────────┐
-│         @dipeshsingh2012/proton/tokens (Ground Truth)  │
+│         @dipesh.singh/proton/tokens (Ground Truth)  │
 │       Colors • Typography • Spacing • Radii • Shadows  │
 └───────────────────────────┬────────────────────────────┘
                             │
             ┌───────────────┴───────────────┐
             ▼                               ▼
   ┌───────────────────────────┐   ┌───────────────────────────┐
-  │ @dipeshsingh2012/proton/react │   │ @dipeshsingh2012/proton/vue│
+  │ @dipesh.singh/proton/react │   │ @dipesh.singh/proton/vue│
   │     (MUI Abstraction)     │   │      (Vue 3 Adapter)      │
   └───────────────────────────┘   └───────────────────────────┘
 ```
@@ -36,7 +36,7 @@ It serves as a clean **abstraction barrier** over underlying UI component librar
 
 ### Via Public npm:
 ```bash
-npm install @dipeshsingh2012/proton
+npm install @dipesh.singh/proton
 ```
 
 Ensure peer dependencies are present in your project:
@@ -48,12 +48,12 @@ npm install react react-dom @mui/material @emotion/react @emotion/styled
 ```json
 {
   "dependencies": {
-    "@dipeshsingh2012/proton": "^0.1.0"
+    "@dipesh.singh/proton": "^0.1.0"
   }
 }
 ```
 
-### 1. React Micro-Frontends (`@dipeshsingh2012/proton/react`)
+### 1. React Micro-Frontends (`@dipesh.singh/proton/react`)
 ```tsx
 import React from 'react';
 import {
@@ -63,8 +63,8 @@ import {
   ProtonStatusBadge,
   ProtonSlider,
   ProtonMetricBox,
-} from '@dipeshsingh2012/proton/react';
-// or directly from '@dipeshsingh2012/proton'
+} from '@dipesh.singh/proton/react';
+// or directly from '@dipesh.singh/proton'
 ```
 
 #### Theme Wrapping
@@ -129,16 +129,16 @@ export const App = () => (
 
 ---
 
-### 2. Vue Micro-Frontends (`@dipeshsingh2012/proton/vue`)
+### 2. Vue Micro-Frontends (`@dipesh.singh/proton/vue`)
 ```ts
-import { ProtonButton, ProtonCard, ProtonStatusBadge } from '@dipeshsingh2012/proton/vue';
+import { ProtonButton, ProtonCard, ProtonStatusBadge } from '@dipesh.singh/proton/vue';
 ```
 
 ---
 
-### 3. Design Tokens (`@dipeshsingh2012/proton/tokens`)
+### 3. Design Tokens (`@dipesh.singh/proton/tokens`)
 ```ts
-import { tokens, colors, spacing, radii } from '@dipeshsingh2012/proton/tokens';
+import { tokens, colors, spacing, radii } from '@dipesh.singh/proton/tokens';
 
 console.log(colors.coffee[900]); // "#2c1e19" (Hiljhil espresso tone)
 console.log(colors.amber[700]);  // "#b45309" (Hiljhil golden roast)
