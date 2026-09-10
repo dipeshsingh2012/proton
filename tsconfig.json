@@ -27,13 +27,13 @@
     "baseUrl": ".",
     "paths": {
       "react": [
-        "/home/dipes/projects/counter-check/node_modules/@types/react"
+        "./node_modules/@types/react"
       ],
       "react-dom": [
-        "/home/dipes/projects/counter-check/node_modules/@types/react-dom"
+        "./node_modules/@types/react-dom"
       ],
       "react/jsx-runtime": [
-        "/home/dipes/projects/counter-check/node_modules/@types/react/jsx-runtime"
+        "./node_modules/@types/react/jsx-runtime"
       ]
     }
   },
