@@ -1,0 +1,21 @@
+export declare const spacing: {
+    readonly 0: "0px";
+    readonly 1: "4px";
+    readonly 1.5: "6px";
+    readonly 2: "8px";
+    readonly 2.5: "10px";
+    readonly 3: "12px";
+    readonly 3.5: "14px";
+    readonly 4: "16px";
+    readonly 5: "20px";
+    readonly 6: "24px";
+    readonly 7: "28px";
+    readonly 8: "32px";
+    readonly 9: "36px";
+    readonly 10: "40px";
+    readonly 12: "48px";
+    readonly 14: "56px";
+    readonly 16: "64px";
+    readonly 20: "80px";
+};
+export type Spacing = typeof spacing;
