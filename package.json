@@ -1,7 +1,23 @@
 {
-  "name": "proton",
+  "name": "@dipeshsingh2012/proton",
   "version": "0.1.0",
   "description": "Unified Design System & Framework-Agnostic Abstraction Layer for Hiljhil Cafe",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dipeshsingh2012/proton.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "design-system",
+    "material-ui",
+    "tokens",
+    "react",
+    "vue",
+    "hiljhil-cafe"
+  ],
   "type": "module",
   "main": "./dist/react/index.js",
   "module": "./dist/react/index.js",
